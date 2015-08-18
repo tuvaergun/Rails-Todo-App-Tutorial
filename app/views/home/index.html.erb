@@ -1,0 +1,19 @@
+ 
+<div id="header">
+  <h1>Welcome to Todo</h1>
+  <h2>Simple Todo Aplication</h2>
+</div>
+
+<div id="getting-started">
+  <h1>Top 10 Todo</h1>
+
+  <ol>
+    <% current_user.items.each do |item| %>
+    <li>
+      <p><%= item.content %></p>
+    </li>
+    <% end %>
+
+
+  </ol>
+</div>

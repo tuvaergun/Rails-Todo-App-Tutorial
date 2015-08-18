@@ -1,0 +1,36 @@
+<% content_for :sitebar do %>
+  <div id="sidebar">
+    <ul id="sidebar-items">
+      <li class="user-info">
+        <p>merhabalar:</p>
+        <h3><%= link_to current_user.email, 'current_user' %></h3>
+        <ul class="links">
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.email, 'current_user' %></li>
+            <li><%= link_to "Profil Edit", edit_user_registration_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+
+        </ul>
+      </li>
+      <li>
+        <h3>Kategoriler</h3>
+        <ul class="links">
+          <li><a href="#">Kategori 1</a></li>
+          <li><a href="#">Kategori 2</a></li>
+          <li><a href="#">Kategori 3</a></li>
+          <li><a href="#">Kategori 4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
+<h1>Editing Category</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @category %> |
+<%= link_to 'Back', categories_path %>
